@@ -159,7 +159,7 @@ function submitForm() {
   var form_data = new FormData(document.getElementById("myform"));
   form_data.append("label", "WEBUPLOAD");
   $.ajax({
-      url: "upload.php",
+      url: "http://10.0.2.2/projects/cricket/web/upload.php",
       type: "POST",
       data: form_data,
       processData:false,  // tell jQuery not to process the data
@@ -190,7 +190,7 @@ function submitForm() {
 						</a>
                         <nav>
 						 <ul class="nav nav-pills nav-top nav-top-left">
-								<div class="head" style="font-family:Quicksand;font-size:28px;font-weight:500">SportStalk</div>
+								<div class="head" style="font-family:Quicksand;font-size:28px;font-weight:500">Cricket App</div>
 						</ul>
                             <ul class="nav nav-pills nav-top nav-top-right">
 
