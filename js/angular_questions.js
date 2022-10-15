@@ -53,19 +53,19 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 /****************************************************************************/
 /************************** Get Inputs **********************************/
 /****************************************************************************/
-$http.post('get_site.php')
+$http.post('http://10.0.2.2/projects/cricket/web/get_site.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.site_details = data.details;
 	});
 	
-	$http.post('get_dept.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_dept.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.dept_details = data.details;
 	});
 	
-	$http.post('get_area.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_area.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.area_details = data.details;
@@ -73,7 +73,7 @@ $http.post('get_site.php')
 	
 	
 	
-	$http.post('get_survey.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_survey.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.survey_details = data.details;
@@ -87,7 +87,7 @@ $http.post('get_site.php')
 	$scope.cook_email = $cookieStore.get("cook_email");
 	$scope.cook_field_3 = $cookieStore.get("cook_field_3");
 
-	$http.post('sum_get.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/sum_get.php', {
 			'email': $scope.cook_email,'field_3': $scope.cook_field_3})
 		.success(function(data, status, headers, config) 
 		{
@@ -109,7 +109,7 @@ $http.post('get_site.php')
 	$scope.cook_email_percent = $cookieStore.get("cook_email_percent");
 	$scope.cook_field_3_percent = $cookieStore.get("cook_field_3_percent");
 
-	$http.post('sum_get.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/sum_get.php', {
 			'email': $scope.cook_email_percent,'field_3': $scope.cook_field_3_percent})
 		.success(function(data, status, headers, config) 
 		{
@@ -131,7 +131,7 @@ $http.post('get_site.php')
 	$scope.cook_email_comment = $cookieStore.get("cook_email_comment");
 	$scope.cook_field_3_comment = $cookieStore.get("cook_field_3_comment");
 
-	$http.post('get_comment.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/get_comment.php', {
 			'email': $scope.cook_email_comment,'field_3': $scope.cook_field_3_comment})
 		.success(function(data, status, headers, config) 
 		{
@@ -152,7 +152,7 @@ $http.post('get_site.php')
 	$scope.cook_email_choice = $cookieStore.get("cook_email_choice");
 	$scope.cook_field_3_choice = $cookieStore.get("cook_field_3_choice");
 
-	$http.post('get_choice.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/get_choice.php', {
 			'email': $scope.cook_email_choice,'field_3': $scope.cook_field_3_choice})
 		.success(function(data, status, headers, config) 
 		{
@@ -171,7 +171,7 @@ $http.post('get_site.php')
 /**************************Get Yes No View **********************************/
 /****************************************************************************/
 
-	$http.post('get_yesno.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/get_yesno.php', {
 			'email': $scope.cook_email,'field_3': $scope.cook_field_3})
 		.success(function(data, status, headers, config) 
 		{
@@ -181,7 +181,7 @@ $http.post('get_site.php')
 /**************************Get Rate Comment **********************************/
 /****************************************************************************/
 
-	$http.post('get_ratecomment.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/get_ratecomment.php', {
 			'email': $scope.cook_email,'field_3': $scope.cook_field_3})
 		.success(function(data, status, headers, config) 
 		{

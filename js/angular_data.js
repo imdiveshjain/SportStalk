@@ -63,26 +63,26 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http,$filt
 /************************** Get My Survey ***********************************/
 /****************************************************************************/
 
-	$http.post('get_date.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_date.php')
 	.success(function(data, status, headers, config) 
 	{
 		$scope.date_details = data.details;
 	});
 	
-	$http.post('get_site.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_site.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.site_details = data.details;
 	});
 	
-	$http.post('get_area.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_area.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.area_details = data.details;
 	});
 	
 	
-	$http.post('get_user_ticket_last.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_user_ticket_last.php', 
 		{
 		'id':$scope.cook_user_email
 		})
@@ -91,7 +91,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http,$filt
 			$scope.user_ticket_details = data.details;
         });
 		
-	$http.post('get_user_grievance.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_user_grievance.php', 
 		{
 		'id':$scope.cook_user_email
 		})
@@ -100,7 +100,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http,$filt
 			$scope.user_grievance_details = data.details;
         });
 		
-	$http.post('get_user_redressal.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_user_redressal.php', 
 		{
 		'id':$scope.cook_user_type,'dept':$scope.cook_user_dept
 		})
@@ -109,7 +109,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http,$filt
 			$scope.user_redressal_details = data.details;
         });
 		
-	$http.post('get_hostel_redressal.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_hostel_redressal.php', 
 		{
 		'id':$scope.cook_user_type,'dept':$scope.cook_user_dept
 		})
@@ -118,7 +118,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http,$filt
 			$scope.hotel_redressal_details = data.details;
         });
 		
-	$http.post('get_food_redressal.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_food_redressal.php', 
 		{
 		'id':$scope.cook_user_type,'dept':$scope.cook_user_dept
 		})
@@ -127,7 +127,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http,$filt
 			$scope.food_redressal_details = data.details;
         });
 		
-	$http.post('get_all_college_redressal.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_all_college_redressal.php', 
 		{
 		'id':$scope.cook_user_dept
 		})
@@ -136,13 +136,13 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http,$filt
 			$scope.college_redressal_details = data.details;
         });
 		
-	$http.post('get_all_redressal.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_all_redressal.php')
 		.success(function(data, status, headers, config) 
 		{
 			$scope.all_redressal_details = data.details;
         });
 		
-	$http.post('get_forward.php',{
+	$http.post('http://10.0.2.2/projects/cricket/web/get_forward.php',{
 			'dept':$scope.cook_user_dept,'type':$scope.cook_user_type
 		})
 		.success(function(data, status, headers, config) 
@@ -150,7 +150,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http,$filt
 			$scope.names = data.details;
         });
 		
-	$http.post('get_category.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_category.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.category_details = data.details;
@@ -184,7 +184,7 @@ $scope.get_file_data = function()
 	
 	$scope.create_hirarchy = function() 
 	{
-		$http.post('create_hirarchy.php', 
+		$http.post('http://10.0.2.2/projects/cricket/web/create_hirarchy.php', 
 		{
 		'field_1':$scope.ModifiedDate,'field_2':$scope.field_2,
 		'field_3':$scope.cook_user_email,'field_4':$scope.cook_user_name,
@@ -225,7 +225,7 @@ $scope.get_file_data = function()
 	
 	$scope.read_notification = function() 
 	{
-		$http.post('read_notification.php', 
+		$http.post('http://10.0.2.2/projects/cricket/web/read_notification.php', 
 		{
 		'type':$scope.cook_user_type,'dept':$scope.cook_user_dept
 		})
@@ -272,7 +272,7 @@ $scope.user_update_info = function(name,password,mobile)
 
 	$scope.save_update_info = function() 
 	{		
-		$http.post('user_update_info.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/user_update_info.php',{
 		 'name':$scope.cook_name, 'password':$scope.cook_password,
 		 'mobile': $scope.cook_mobile, 'email': $scope.cook_user_email})
 		.success(function(data, status, headers, config) 
@@ -306,7 +306,7 @@ $scope.user_update_info = function(name,password,mobile)
 
 	$scope.save_rating = function() 
 	{		
-		$http.post('save_rating.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/save_rating.php',{
 		 'email':$scope.cook_email, 'field_1':$scope.field_1,'field_2':$scope.comment
 		 })
 		.success(function(data, status, headers, config) 
@@ -333,7 +333,7 @@ $scope.user_update_info = function(name,password,mobile)
 		 
 	$scope.delay_grievance = function(email,delay) 
 	{		
-		$http.post('delay_grievance.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/delay_grievance.php',{
 		 'email':email, 'field_1':delay
 		 })
 		.success(function(data, status, headers, config) 
@@ -361,7 +361,7 @@ $scope.user_update_info = function(name,password,mobile)
 		 
 	$scope.forward_grievance = function(cus_id,field_9) 
 	{		
-		$http.post('forward_grievance.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/forward_grievance.php',{
 		 'cus_id':cus_id, 'field_1':field_9,
 		 'type':$scope.cook_user_type,'dept':$scope.cook_user_dept
 		 })
@@ -449,7 +449,7 @@ $scope.user_update_info = function(name,password,mobile)
 /**************************************************************************************/
 	$scope.add_news= function() 
 	{
-		$http.post('news_add.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/news_add.php',{
 			'topic': $scope.topic, 'content':$scope.content})	
 		.success(function(data, status, headers, config)
 		{
@@ -471,7 +471,7 @@ $scope.user_update_info = function(name,password,mobile)
 /**************************News view Details *******************************/
 /**************************************************************************/
 	
-			$http.post('news_get.php')
+			$http.post('http://10.0.2.2/projects/cricket/web/news_get.php')
 			.success(function(data, status, headers, config)  
 			{
 				if(data.success == 1)
@@ -487,7 +487,7 @@ $scope.user_update_info = function(name,password,mobile)
 
 	$scope.news_delete = function(id) 
 	{		
-        $http.post('news_delete.php', 
+        $http.post('http://10.0.2.2/projects/cricket/web/news_delete.php', 
 		{
 		'cus_id': id
 		})

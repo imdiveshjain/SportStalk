@@ -8,7 +8,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http)
 	// sign in button
 	$scope.user_login = function() 
 	{		
-        $http.post('user_login.php', 
+        $http.post('http://10.0.2.2/projects/cricket/web/user_login.php', 
 			{'email': $scope.email, 'password':$scope.password})
 		.success(function(data, status, headers, config) 
 		{
@@ -110,7 +110,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http)
 	// sign in button
 	$scope.admin_login = function() 
 	{		
-        $http.post('admin_login.php', 
+        $http.post('http://10.0.2.2/projects/cricket/web/admin_login.php', 
 			{'email': $scope.email, 'password':$scope.password})
 		.success(function(data, status, headers, config) 
 		{
@@ -157,7 +157,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http)
 
 	$scope.admin_register = function() 
 	{		
-		$http.post('admin_register.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/admin_register.php',{
 		 'name':$scope.name,'email':$scope.email,
 		 'password':$scope.password,'mobile': $scope.mobile})
 		.success(function(data, status, headers, config) 
@@ -177,7 +177,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http)
 	 
 /************************** Update Admin Info **********************************/
 
-		$http.post('get_admin_info.php')
+		$http.post('http://10.0.2.2/projects/cricket/web/get_admin_info.php')
 		.success(function(data, status, headers, config) 
 		{
 			if(data.success == 1)
@@ -188,7 +188,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http)
 		
 /************************** Update User Info **********************************/
 		
-		$http.post('get_user_info.php',
+		$http.post('http://10.0.2.2/projects/cricket/web/get_user_info.php',
 		{
 			'email':$scope.cook_user_email
 		})
@@ -215,7 +215,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http)
 	
 	$scope.save_info = function() 
 	{		
-		$http.post('admin_update.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/admin_update.php',{
 		 'name':$scope.name,'email':$scope.email,
 		 'password':$scope.password,'mobile': $scope.mobile})
 		.success(function(data, status, headers, config) 
@@ -239,7 +239,7 @@ app.controller("myappCtrl", function($scope, $cookieStore, $cookies, $http)
 	// sign in button
 	$scope.newpassword = function() 
 	{		
-        $http.post('newpassword.php', 
+        $http.post('http://10.0.2.2/projects/cricket/web/newpassword.php', 
 			{	'email': $scope.email, 'password':$scope.password,
 				'field_3': $scope.field_3, 'field_4':$scope.field_4
 				})

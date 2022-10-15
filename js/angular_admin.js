@@ -54,7 +54,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http, $fil
 /************************** Post Query User *********************************/
 /****************************************************************************/
 
-			$http.post('news_get.php')
+			$http.post('http://10.0.2.2/projects/cricket/web/news_get.php')
 			.success(function(data, status, headers, config)  
 			{
 					$scope.news_details = data.products;
@@ -78,7 +78,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http, $fil
 /****************************************************************************/
 	$scope.create_employee = function() 
 	{
-	$http.post('create_employee.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/create_employee.php', 
 		{
 		'name':$scope.name1,'email':$scope.email,'password':$scope.password,
 		'mobile':$scope.mobile,'field_1':$scope.field_1,'field_2':$scope.field_2,
@@ -111,7 +111,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http, $fil
 
 	$scope.create_employee_1 = function() 
 	{
-	$http.post('user_register.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/user_register.php', 
 		{
 		'name':$scope.name1,'email':$scope.email,'password':$scope.password,
 		'mobile':$scope.mobile,'field_1':$scope.field_1,'field_2':$scope.field_2,
@@ -191,7 +191,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http, $fil
 	$scope.cook_field_2 = $cookieStore.get("cook_field_2");
 
     
-	$http.post('get_match_score_update.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_match_score_update.php', 
 		{
 		'email':$scope.cook_email,'team_1':$scope.cook_field_1,
 		'team_2':$scope.cook_field_2
@@ -201,7 +201,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http, $fil
 			$scope.all_match_score_card_details = data.details;
         });
 		
-	$http.post('get_employee_info.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_employee_info.php', 
 		{
 		'id':$scope.cook_user_id
 		})
@@ -218,7 +218,7 @@ $scope.save_employee = function()
 	{
 		$scope.cook_field_11 = "Nil";
 		
-	$http.post('save_employee.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/save_employee.php', {
 			'id': $scope.cus_id,'email': $scope.cook_email, 
 			
 			'field_1': $scope.cook_field_1,'field_2': $scope.cook_field_2, 
@@ -264,7 +264,7 @@ $scope.save_employee = function()
 /****************************************************************************/
 	$scope.create_category = function() 
 	{
-	$http.post('create_category.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/create_category.php', 
 		{
 		'field_1':$scope.field_1
 		})
@@ -291,7 +291,7 @@ $scope.save_employee = function()
 /****************************************************************************/
 	$scope.create_dept = function() 
 	{
-	$http.post('create_dept.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/create_dept.php', 
 		{
 		'field_1':$scope.field_1
 		})
@@ -338,7 +338,7 @@ $scope.save_employee = function()
 		
 $scope.save_dept = function() 
 	{
-	$http.post('save_dept.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/save_dept.php', {
 			'id': $scope.cook_cus_id,
 			'field_1': $scope.cook_field_1})
 	.success(function(data, status, headers, config) 
@@ -365,7 +365,7 @@ $scope.save_dept = function()
 	
 $scope.save_cat = function() 
 	{
-	$http.post('save_cat.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/save_cat.php', {
 			'id': $scope.cook_cus_id,
 			'field_1': $scope.cook_field_1})
 	.success(function(data, status, headers, config) 
@@ -395,7 +395,7 @@ $scope.save_cat = function()
 /****************************************************************************/
 	$scope.create_site = function() 
 	{
-	$http.post('create_site.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/create_site.php', 
 		{
 		'field_1':$scope.field_1
 		})
@@ -435,7 +435,7 @@ $scope.save_cat = function()
 		
 $scope.save_site = function() 
 	{
-	$http.post('save_site.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/save_site.php', {
 			'id': $scope.cook_cus_id,
 			'field_1': $scope.cook_field_1})
 	.success(function(data, status, headers, config) 
@@ -465,7 +465,7 @@ $scope.save_site = function()
 /****************************************************************************/
 	$scope.create_area = function() 
 	{
-	$http.post('create_area.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/create_area.php', 
 		{
 		'field_1':$scope.field_1,'field_2':$scope.field_2,'field_3':$scope.field_3
 		})
@@ -507,7 +507,7 @@ $scope.save_site = function()
 		
 $scope.save_area = function() 
 	{
-	$http.post('save_area.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/save_area.php', {
 			'id': $scope.cook_cus_id,
 			'field_1': $scope.cook_field_1,'field_3': $scope.cook_field_3})
 	.success(function(data, status, headers, config) 
@@ -534,7 +534,7 @@ $scope.save_area = function()
 	
 $scope.get_site_area = function(field_6) 
 	{
-	$http.post('get_site_area.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/get_site_area.php', {
 			'field_6': $scope.field_6})
 	.success(function(data, status, headers, config) 
 	{
@@ -544,7 +544,7 @@ $scope.get_site_area = function(field_6)
 	}
 $scope.get_site_area_2 = function(field_20) 
 	{
-	$http.post('get_site_area.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/get_site_area.php', {
 			'field_6': $scope.field_20})
 	.success(function(data, status, headers, config) 
 	{
@@ -558,7 +558,7 @@ $scope.get_site_area_2 = function(field_20)
 /****************************************************************************/
 	$scope.create_user = function() 
 	{
-	$http.post('create_user.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/create_user.php', 
 		{
 		'field_1':$scope.field_1
 		})
@@ -598,7 +598,7 @@ $scope.get_site_area_2 = function(field_20)
 		
 $scope.save_user = function() 
 	{
-	$http.post('save_user.php', {
+	$http.post('http://10.0.2.2/projects/cricket/web/save_user.php', {
 			'id': $scope.cook_cus_id,
 			'field_1': $scope.cook_field_1})
 	.success(function(data, status, headers, config) 
@@ -642,7 +642,7 @@ $scope.save_user = function()
 	// products_delete
 	$scope.delete_hirarchy = function(cusid) 
 	{		
-        $http.post('delete_hirarchy.php', 
+        $http.post('http://10.0.2.2/projects/cricket/web/delete_hirarchy.php', 
 		{
 		'id': cusid
 		})
@@ -671,7 +671,7 @@ $scope.save_user = function()
 	// products_delete
 	$scope.delete_tat = function(cusid) 
 	{		
-        $http.post('delete_tat.php', 
+        $http.post('http://10.0.2.2/projects/cricket/web/delete_tat.php', 
 		{
 		'id': cusid
 		})
@@ -699,7 +699,7 @@ $scope.save_user = function()
 	// products_delete
 	$scope.delete_question = function(cusid,email) 
 	{		
-        $http.post('delete_question.php', 
+        $http.post('http://10.0.2.2/projects/cricket/web/delete_question.php', 
 		{
 		'id': cusid,'survery_id': email
 		})
@@ -728,7 +728,7 @@ $scope.save_user = function()
 	// products_delete
 	$scope.delete_dept = function(cusid) 
 	{		
-        $http.post('delete_dept.php', 
+        $http.post('http://10.0.2.2/projects/cricket/web/delete_dept.php', 
 		{
 		'id': cusid
 		})
@@ -753,7 +753,7 @@ $scope.save_user = function()
 
 	$scope.delete_cat = function(cusid) 
 	{		
-        $http.post('delete_cat.php', 
+        $http.post('http://10.0.2.2/projects/cricket/web/delete_cat.php', 
 		{
 		'id': cusid
 		})
@@ -782,7 +782,7 @@ $scope.save_user = function()
 	// products_delete
 	$scope.delete_area = function(cusid) 
 	{		
-        $http.post('delete_area.php', 
+        $http.post('http://10.0.2.2/projects/cricket/web/delete_area.php', 
 		{
 		'id': cusid
 		})
@@ -811,7 +811,7 @@ $scope.save_user = function()
 	// products_delete
 	$scope.delete_site = function(cusid) 
 	{		
-        $http.post('delete_site.php', 
+        $http.post('http://10.0.2.2/projects/cricket/web/delete_site.php', 
 		{
 		'id': cusid
 		})
@@ -838,7 +838,7 @@ $scope.save_user = function()
 /************************** All service_get_al Details*********************************/
 /****************************************************************************/
 
-	$http.post('application_get_admin.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/application_get_admin.php')
 	.success(function(data, status, headers, config) 
 	{
 		if(data.success == 1)
@@ -853,25 +853,25 @@ $scope.save_user = function()
 /****************************************************************************/
 /************************** All GET get_employee Details*********************************/
 /****************************************************************************/
-	$http.post('update_tat_grievance.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/update_tat_grievance.php')
 		.success(function(data, status, headers, config) 
 		{
 				$scope.update_tat_details = data.details;
 		});
 
-	$http.post('get_tat.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_tat.php')
 	.success(function(data, status, headers, config) 
 	{
 		$scope.tat_details = data.details;
     });
 	
-	$http.post('get_match.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_match.php')
 	.success(function(data, status, headers, config) 
 	{
 		$scope.all_match_score_details = data.details;
     });
 	
-	$http.post('get_date.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_date.php')
 	.success(function(data, status, headers, config) 
 	{
 		$scope.date_details = data.details;
@@ -879,7 +879,7 @@ $scope.save_user = function()
 	
 
 	
-	$http.post('get_dept.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_dept.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.dept_details = data.details;
@@ -887,43 +887,43 @@ $scope.save_user = function()
 	
 	
 	
-	$http.post('get_category.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_category.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.category_details = data.details;
 	});
 	
-	$http.post('get_hirarchy.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_hirarchy.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.hirarchy_details = data.details;
 	});
 	
-	$http.post('get_site.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_site.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.site_details = data.details;
 	});
 	
-	$http.post('get_area.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_area.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.area_details = data.details;
 	});
 	
-	$http.post('get_user_type.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_user_type.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.user_type_details = data.details;
 	});
 	
-	$http.post('get_site_results.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_site_results.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.all_site_results = data.details;
 	});
 	
-	$http.post('get_search_results.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_search_results.php')
 	.success(function(data, status, headers, config) 
 	{
 			$scope.all_ticket_results = data.details;
@@ -935,7 +935,7 @@ $scope.save_user = function()
 /************************** All User Details*********************************/
 /****************************************************************************/
 
-	$http.post('user_get_all.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/user_get_all.php')
 	.success(function(data, status, headers, config) 
 	{
 		$scope.user_details = data.details;
@@ -949,7 +949,7 @@ $scope.save_user = function()
 
 	$scope.create_tat = function() 
 	{
-	$http.post('create_tat.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/create_tat.php', 
 		{
 		'field_1':$scope.field_1,'field_2':$scope.field_2,
 		'field_4':$scope.field_4,'field_5':$scope.field_5
@@ -978,7 +978,7 @@ $scope.save_user = function()
 
 	$scope.create_hirarchy = function() 
 	{
-	$http.post('create_hirarchy.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/create_hirarchy.php', 
 		{
 		'field_1':$scope.field_1,'field_2':$scope.field_2,
 		'field_3':$scope.field_3
@@ -1016,7 +1016,7 @@ $scope.save_user = function()
 
 	$scope.save_hirarchy = function() 
 	{		
-		$http.post('save_hirarchy.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/save_hirarchy.php',{
 		  'id':$scope.cook_cus_id,'field_1':$scope.field_1,
 		  'field_2': $scope.field_2,'field_3': $scope.cook_field_3
 		  })
@@ -1059,7 +1059,7 @@ $scope.save_user = function()
 
 	$scope.save_tat = function() 
 	{		
-		$http.post('save_tat.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/save_tat.php',{
 		  'id':$scope.cook_cus_id,'field_1':$scope.cook_field_1,
 		  'field_2': $scope.cook_field_2,'field_4': $scope.cook_field_4,
 		  'field_5': $scope.cook_field_5
@@ -1094,7 +1094,7 @@ $scope.save_user = function()
 /************************** Admin Update Profile *********************************/
 /****************************************************************************/
 	
-		$http.post('get_admin_info.php',
+		$http.post('http://10.0.2.2/projects/cricket/web/get_admin_info.php',
 		{
 			'field_1':$scope.cook_admin_email
 		})
@@ -1111,7 +1111,7 @@ $scope.save_user = function()
 /************************** Admin Update Profile *********************************/
 /****************************************************************************/
 	
-		$http.post('get_admin_info.php',
+		$http.post('http://10.0.2.2/projects/cricket/web/get_admin_info.php',
 		{
 			'field_1':$scope.cook_admin_email
 		})
@@ -1138,7 +1138,7 @@ $scope.save_user = function()
 
 	$scope.save_update_admin = function() 
 	{		
-		$http.post('admin_update_info.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/admin_update_info.php',{
 		  'password':$scope.cook_password,'field_1': $scope.cook_admin_email})
 		.success(function(data, status, headers, config) 
 		{
@@ -1221,7 +1221,7 @@ $scope.save_user = function()
 	$scope.toggle = function() 
 	{
 		$scope.myCustomer = false;
-		$http.post('get_employee.php')
+		$http.post('http://10.0.2.2/projects/cricket/web/get_employee.php')
 		.success(function(data, status, headers, config) 
 		{
 			if(data.success == 1)
@@ -1264,14 +1264,14 @@ $scope.save_user = function()
 /*************************************************************************/
 /*********************Cummulative 5 Rating*********************************/
 /****************************************************************************/
-	$http.post('get_all_results.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_all_results.php')
 		.success(function(data, status, headers, config) 
 		{
 			$scope.all_results = data.details;
         });
 		
 		
-	$http.post('get_all_live_score.php')
+	$http.post('http://10.0.2.2/projects/cricket/web/get_all_live_score.php')
 		.success(function(data, status, headers, config) 
 		{
 			$scope.all_live_score = data.details;
@@ -1293,7 +1293,7 @@ $scope.save_user = function()
 		 
 	$scope.update_run = function(email,cus_id,field_4) 
 	{		
-		$http.post('update_run.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/update_run.php',{
 		 'email':email, 'cus_id':cus_id ,'field_4':field_4
 		 })
 		.success(function(data, status, headers, config) 
@@ -1323,7 +1323,7 @@ $scope.save_user = function()
 	$scope.create_grievance = function() 
 	{
 
-		$http.post('create_grievance.php', 
+		$http.post('http://10.0.2.2/projects/cricket/web/create_grievance.php', 
 		{
 		'field_1':$scope.field_1,'field_2':$scope.field_2,
 		'field_3':$scope.field_3,'field_4':$scope.field_4,
@@ -1361,7 +1361,7 @@ $scope.save_user = function()
 	$scope.create_match = function() 
 	{
 
-		$http.post('create_match.php', 
+		$http.post('http://10.0.2.2/projects/cricket/web/create_match.php', 
 		{
 		'field_1':$scope.field_1,'field_2':$scope.field_2,
 		'field_3':$scope.field_3,'email':$scope.cook_email
@@ -1410,7 +1410,7 @@ $scope.save_user = function()
 
 	$scope.update_players = function(field_1,field_2,field_3) 
 	{		
-		$http.post('add_team.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/add_team.php',{
 		 'email':$scope.cook_email, 'field_1':field_1 ,'field_2':field_2,'field_3':field_3
 		 })
 		.success(function(data, status, headers, config) 
@@ -1434,7 +1434,7 @@ $scope.save_user = function()
 
 	$scope.update_player_status = function() 
 	{		
-		$http.post('update_player_status.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/update_player_status.php',{
 		 'email':$scope.cook_email, 'field_1':$scope.field_1 ,'field_2':$scope.field_2,
 		 'field_3':$scope.field_3
 		 })
@@ -1460,7 +1460,7 @@ $scope.save_user = function()
 
 	$scope.update_status = function(cus_id,field_10) 
 	{		
-		$http.post('update_status.php',{
+		$http.post('http://10.0.2.2/projects/cricket/web/update_status.php',{
 		 'cus_id':cus_id, 'live_status':field_10
 		 })
 		.success(function(data, status, headers, config) 
@@ -1507,7 +1507,7 @@ $scope.save_user = function()
 	$scope.cook_team_2 = $cookieStore.get("cook_team_2");
 	
 	
-	$http.post('get_match_live_score.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_match_live_score.php', 
 		{
 		'email':$scope.cook_email
 		})
@@ -1517,7 +1517,7 @@ $scope.save_user = function()
         });
 		
 	
-	$http.post('get_team_live_score.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_team_live_score.php', 
 		{
 		'email':$scope.cook_email,'team':$scope.cook_team_1
 		})
@@ -1527,7 +1527,7 @@ $scope.save_user = function()
         });
 		
 		
-	$http.post('get_full_live_score.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_full_live_score.php', 
 		{
 		'email':$scope.cook_email,'team_1':$scope.cook_team_1,
 		'team_2':$scope.cook_team_2
@@ -1538,7 +1538,7 @@ $scope.save_user = function()
         });
 		
 		
-	$http.post('get_full_live_score_2.php', 
+	$http.post('http://10.0.2.2/projects/cricket/web/get_full_live_score_2.php', 
 		{
 		'email':$scope.cook_email,'team_1':$scope.cook_team_1,
 		'team_2':$scope.cook_team_2
